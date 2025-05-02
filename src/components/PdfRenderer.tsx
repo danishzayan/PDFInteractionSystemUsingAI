@@ -33,8 +33,7 @@ import {
 import SimpleBar from 'simplebar-react'
 import PdfFullscreen from './PdfFullscreen'
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
-
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 interface PdfRendererProps {
   url: string
 }
@@ -86,7 +85,7 @@ const PdfRenderer = ({ url }: PdfRendererProps) => {
     setCurrPage(Number(page))
     setValue('page', String(page))
   }
-
+  console.log("pdf file =====>", url);
   return (
     <div className='w-full bg-white rounded-md shadow flex flex-col items-center'>
       <div className='h-14 w-full border-b border-zinc-200 flex items-center justify-between px-2'>
@@ -180,6 +179,7 @@ const PdfRenderer = ({ url }: PdfRendererProps) => {
           </Button>
 
           <PdfFullscreen fileUrl={url} />
+          
         </div>
       </div>
 
